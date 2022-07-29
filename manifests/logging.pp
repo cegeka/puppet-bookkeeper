@@ -11,7 +11,7 @@
 # Sample Usage:
 #
 class bookkeeper::logging (
-  $log_dir= $bookkeeper::log_dir,
+  $log_dir = $bookkeeper::log_dir,
 ) inherits bookkeeper {
 
   file { $log_dir :
