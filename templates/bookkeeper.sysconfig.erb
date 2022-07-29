@@ -1,5 +1,5 @@
 # THIS FILE IS MANAGED BY PUPPET, DO NOT EDIT MANUALLY!
-BOOKIE_CONF=/etc/bookkeeper/bk_server.conf
+BOOKIE_CONF=<%= scope.lookupvar("bookkeeper::config_name") %>
 BOOKIE_LOG_CONF=/etc/bookkeeper/log4j.properties
 BOOKIE_PID_DIR=/var/run/bookkeeper/bookkeeper.pid
 BOOKIE_EXTRA_OPTS=-XX:+IgnoreUnrecognizedVMOptions
