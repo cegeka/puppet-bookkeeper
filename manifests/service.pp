@@ -21,6 +21,11 @@ class bookkeeper::service (
   }
 
   if $service_manage == true {
+    file { '/etc/sysconfig/bookkeeper':
+      ensure  => file,
+      content => template('bookkeeper/bookkeeper.sysconfig.erb')
+    }
+
     service { $service_name:
       ensure     => $service_ensure,
       enable     => $service_enable,

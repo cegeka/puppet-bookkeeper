@@ -9,7 +9,9 @@ class bookkeeper::params (
   $service_name = 'bookkeeper',
   $package_ensure = 'present',
   $package_name = 'apache-bookkeeper',
-  $config_name = '/etc/bookkeeper/bk_server.conf'
+  $config_name = '/etc/bookkeeper/bk_server.conf',
+  $log_dir = '/var/log/bookkeeper',
+  $logger = 'CONSOLE,ROLLINGFILE'
 ) {
 
 }

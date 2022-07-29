@@ -15,10 +15,13 @@ class bookkeeper(
   $service_ensure = $::bookkeeper::params::service_ensure,
   $service_manage = $::bookkeeper::params::service_manage,
   $service_name   = $::bookkeeper::params::service_name,
-  $config_name    = $::bookkeeper::params::config_name
+  $config_name    = $::bookkeeper::params::config_name,
+  $log_dir        = $::bookkeeper::params::log_dir,
+  $logger         = $::bookkeeper::params::logger
   ) inherits bookkeeper::params {
 
   contain 'bookkeeper::package'
+  contain 'bookkeeper::logging'
   contain 'bookkeeper::service'
 
 }
