@@ -2,7 +2,7 @@
 BOOKIE_CONF=<%= scope.lookupvar("bookkeeper::config_name") %>
 BOOKIE_LOG_CONF=/etc/bookkeeper/log4j.properties
 BOOKIE_PID_DIR=/var/run/bookkeeper/bookkeeper.pid
-BOOKIE_EXTRA_OPTS=-XX:+IgnoreUnrecognizedVMOptions
+BOOKIE_EXTRA_OPTS="-XX:+IgnoreUnrecognizedVMOptions <%= scope.lookupvar("bookkeeper::bookkeeper_extra_opts") %>"
 BOOKIE_LOG_DIR=<%= scope.lookupvar("bookkeeper::log_dir") %>
 BOOKIE_LOG_FILE=bookkeeper-server.log
 BOOKIE_ROOT_LOGGER="CONSOLE,ROLLINGFILE"
