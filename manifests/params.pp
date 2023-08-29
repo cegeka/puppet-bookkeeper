@@ -12,7 +12,7 @@ class bookkeeper::params (
   $config_name = '/etc/bookkeeper/bk_server.conf',
   $log_dir = '/var/log/bookkeeper',
   $logger = 'CONSOLE,ROLLINGFILE',
- 
+
   $bookeeper_version_number = Integer(regsubst($::profile::iac::bookkeeper::package_ensure , "[.]","","G"))
 
 ) {
