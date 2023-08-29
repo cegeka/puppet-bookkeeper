@@ -19,8 +19,10 @@ class bookkeeper::params (
 
   if $bookeeper_version_number >= 4162 {
     $logger_file = 'log4j2.xml'
+    $logger_env  = 'BOOKIE_ROOT_LOG_APPENDER=ROLLINGFILE'
   } else {
     $logger_file = 'log4j.properties'
+    $logger_env  = 'BOOKIE_ROOT_LOGGER=CONSOLE,ROLLINGFILE'
   }
 
 }
