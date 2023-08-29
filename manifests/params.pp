@@ -11,7 +11,16 @@ class bookkeeper::params (
   $package_name = 'apache-bookkeeper',
   $config_name = '/etc/bookkeeper/bk_server.conf',
   $log_dir = '/var/log/bookkeeper',
-  $logger = 'CONSOLE,ROLLINGFILE'
+  $logger = 'CONSOLE,ROLLINGFILE',
+ 
+  $bookeeper_version_number = Integer(regsubst($::profile::iac::bookkeeper::package_ensure , "[.]","","G"))
+
 ) {
+
+  if $bookeeper_version_number >= 4162 {
+    $logger_file = 'log4j2.xml'
+  } else {
+    $logger_file = 'log4j.properties'
+  }
 
 }
